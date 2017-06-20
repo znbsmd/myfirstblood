@@ -1,0 +1,6 @@
+//对于非同源的域名，iframe 子页面无法通过 parent.location 或者 top.location 拿到具体的页面地址，但是可以写入 top.location ，也就是可以控制父页面的跳转。
+
+//两个属性分别可以又简写为 self 与 top，所以当发现我们的页面被嵌套在 iframe 时，可以重定向父级页面：
+if(self!=top){
+	top.location.href ="your url"
+}
